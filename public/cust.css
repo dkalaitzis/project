@@ -1,0 +1,68 @@
+body {
+    background-color: #D3D3D3
+}
+
+.login_card {
+    width: 300px;
+    border: none
+}
+
+.btn-dark:hover {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd
+}
+
+.nav-pills {
+    display: table !important;
+    width: 100%
+}
+
+.nav-pills .nav-link {
+    border-radius: 0px;
+    border-bottom: 1px solid #0d6efd40
+}
+
+/*.nav-item {
+    display: table-cell;
+    background: #0d6efd2e
+}*/
+
+.nav-link:hover {
+    text-decoration: underline;
+
+}
+
+
+.form {
+    padding: 10px;
+    height: 300px
+}
+
+.form input {
+    margin-bottom: 12px;
+    border-radius: 3px
+}
+
+.form input:focus {
+    box-shadow: none
+}
+
+.form button {
+    margin-top: 20px
+}
+
+#topImg {
+    position: relative;
+    padding: 5px;
+    border-radius: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    
+}
+
+#topImg:hover {
+  background-color: #555;
+}
