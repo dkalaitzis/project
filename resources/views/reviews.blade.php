@@ -14,15 +14,11 @@
               <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner" role="listbox">
-              <div class="carousel-item active">
-                <img class="d-block img-fluid" src="car.jpeg" alt="First slide">
+            @foreach ($car->images as $image)
+              <div class="carousel-item {{$loop->first ? 'active' : '' }}"> 
+                  <img class="d-block img-fluid" src="{{ asset($image->path) }}" alt="First slide">
               </div>
-              <div class="carousel-item">
-                <img class="d-block img-fluid" src="car1.jpeg" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block img-fluid" src="cat.jpeg" alt="Third slide">
-              </div>
+            @endforeach
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -34,30 +30,26 @@
             </a>
           </div>
           <div class="card-body">
-            <h3 class="card-title">$selected product name</h3>
-            <h4>$selected product price</h4>
-            <p class="card-text">$selected product description</p>
+            <h3 class="card-title">{{ $car->car_name }}</h3>
+            <h4>${{ number_format($car->car_price) }}</h4>
+            <p class="card-text">{{ $car->car_description }}</p>
             <button type="button" class="btn btn-primary" onClick="window.location.href='checkout'">Buy Now!</button>
           </div>
         </div>
 
         
-
+      
         <div class="card card-outline-secondary my-4">
           <div class="card-header">
             Product Reviews
           </div>
           <div class="card-body">
-            <p>$Review content</p>
-            <small class="text-muted">$username of the review</small>
+
+      @foreach ($car->reviews as $review)
+            <p>{{ $review->review }}</p>
+            <small class="text-muted">{{ $review->user->name }}</small>
             <hr>
-            <p>$Review content</p>
-            <small class="text-muted">$username of the review</small>
-            <hr>
-            <p>$Review content</p>
-            <small class="text-muted">$username of the review</small>
-            <hr>
-            
+      @endforeach  
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Leave a Review</button>

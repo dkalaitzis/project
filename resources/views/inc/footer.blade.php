@@ -2,11 +2,12 @@
 @if(Request::path() === 'home')
 	<footer class="py-4 bg-dark">
 
-@elseif(Request::path() === 'reviews')
+@elseif(basename(request()->path()) === 'reviews')
 	<footer class="py-4 bg-dark" style="position: static; width: 100%; bottom: 0;">
 
 @else
 	<footer class="py-4 bg-dark" style="position: absolute; width: 100%; bottom: 0;">	
+
 @endif
 
 		<div class="container">

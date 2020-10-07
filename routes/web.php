@@ -22,7 +22,7 @@ Route::get('/', [PagesController::class, 'redirect']);
 Route::get('/faq', [PagesController::class, 'faq']);
 Route::get('/login', [PagesController::class, 'login']);
 Route::get('/checkout', [PagesController::class, 'checkout']);
-Route::get('/reviews', [PagesController::class, 'reviews']);
+Route::get('/{slug}/reviews', [PagesController::class, 'reviews']);
 
 
 Auth::routes();

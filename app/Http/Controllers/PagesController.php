@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Car;
 
 class PagesController extends Controller
 {
 
     public function home(){
-    	return view('home');
+        return view('home', ['cars' => Car::all()]);
     }
 
     public function redirect(){
@@ -23,8 +25,9 @@ class PagesController extends Controller
     	return view('faq');
     }
 
-    public function reviews(){
-    	return view('reviews');
+    public function reviews($slug){
+        $car = Car::where('slug', $slug)->first();
+    	return view('reviews', ['car' => $car]);
     }
 
     public function checkout(){
