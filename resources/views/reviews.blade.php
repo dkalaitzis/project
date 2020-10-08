@@ -65,11 +65,11 @@
                   </div>
                   <!-- Modal Body -->
 
-                  <form action="{{ route('review.create') }}" method="post">
+                  <form action="{{ route('review.create', ['slug'=>$car->slug]) }}" method="post">
                     @csrf
                     <div class="modal-body">
                       <div class="md-form">  
-                      <textarea id="review" class="form-control md-textarea" length="250" rows="3" placeholder="Type your text"></textarea>
+                      <textarea id="review" name="review" class="form-control md-textarea" length="250" rows="3" placeholder="Type your text"></textarea>
                       </div>
                     </div>
                     <!-- Modal Footer -->

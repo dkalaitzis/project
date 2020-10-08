@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Car;
 use Illuminate\Support\Facades\Auth;
 
+
 class CarController extends Controller
 {
 
@@ -36,7 +37,8 @@ class CarController extends Controller
         return view('checkout', ['car' => $car]);
     }
 
-    public function createReview(Request $request, $slug) {
+    public function createReview(Request $request, Car $car, $slug) {
+        $car = Car::where('slug', $slug)->first();
 
         $input = $request->validate(['review' => 'string|max:255']);
 
@@ -46,7 +48,7 @@ class CarController extends Controller
             'review' => $input['review']
         ]);
 
-        return redirect();
+        return view('reviews', ['car' => $car]);
     }
 }
 
