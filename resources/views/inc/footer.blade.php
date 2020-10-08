@@ -6,7 +6,10 @@
 	<footer class="py-4 bg-dark" style="position: static; width: 100%; bottom: 0;">
 
 @elseif(request()->segment(1) === 'checkout')
-	<footer class="py-4 bg-dark" style="position: absolute; width: 100%; bottom: 0;">	
+	<footer class="py-4 bg-dark" style="position: absolute; width: 100%; bottom: 0;">
+
+@else
+	<footer class="py-4 bg-dark" style="position: absolute; width: 100%; bottom: 0;">
 
 @endif
 
