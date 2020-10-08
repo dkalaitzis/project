@@ -10,7 +10,7 @@
                   <div class="amount">
                       <div class="inner">
                         <span class="dollar">$</span>
-                        <span class="total"> $_SESSION["total"] </span>
+                        <span class="total">{{ number_format($car->car_price) }}</span>
                       </div>
                   </div>
               </div>
@@ -18,16 +18,16 @@
                   <label for="card number" class="d-flex justify-content-between">
                     <span class="labeltxt">CARD NUMBER</span>
                   </label> 
-                  <input type="number" name="number" class="form-control inputtxt" placeholder="8881 2545 2545 2245"> 
+                  <input type="number" name="card" class="form-control inputtxt" placeholder="8881 2545 2545 2245"> 
                 </div>
               <div class="d-flex justify-content-between px-3 pt-4">
                   <div>
                     <label for="date" class="exptxt"> Expiry </label>
-                    <input type="number" name="number" class="form-control expiry" placeholder="YYYY">
+                    <input type="number" name="expiry" class="form-control expiry" placeholder="YYYY">
                   </div>
                   <div>
                     <label for="cvv" class="cvvtxt">CVV / CVC </label>
-                    <input type="number" name="number" class="form-control cvv" placeholder="123">
+                    <input type="number" name="cvv" class="form-control cvv" placeholder="123">
                   </div>
               </div>
               <div class="d-flex justify-content-between px-3 pt-4 pb-4">

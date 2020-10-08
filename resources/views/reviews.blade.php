@@ -4,7 +4,7 @@
 <!-- Page Content -->
   <div class="container">
     <div class="row">
-      <div class="col-lg-2"></div>
+      <div class="col-lg-1"></div>
       <div class="col-lg-10">
         <div class="card mt-5">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -33,7 +33,7 @@
             <h3 class="card-title">{{ $car->car_name }}</h3>
             <h4>${{ number_format($car->car_price) }}</h4>
             <p class="card-text">{{ $car->car_description }}</p>
-            <button type="button" class="btn btn-primary" onClick="window.location.href='checkout'">Buy Now!</button>
+            <button type="button" class="btn btn-primary" onClick="window.location.href='/checkout/{{$car->slug}}'">Buy Now!</button>
           </div>
         </div>
 
@@ -64,17 +64,20 @@
                     </button>
                   </div>
                   <!-- Modal Body -->
-                  <div class="modal-body">
-                  <div class="md-form">
+
+                  <form action="{{ route('review.create') }}" method="post">
                     @csrf
-                  <textarea method="post" action="" id="review" class="form-control md-textarea" length="250" rows="3" placeholder="Type your text"></textarea>
-                  </div>
-                  </div>
-                  <!-- Modal Footer -->
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary" name="submit" onClick="/reviews">Submit</button>
-                  </div>
+                    <div class="modal-body">
+                      <div class="md-form">  
+                      <textarea id="review" class="form-control md-textarea" length="250" rows="3" placeholder="Type your text"></textarea>
+                      </div>
+                    </div>
+                    <!-- Modal Footer -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                      <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>

@@ -2,8 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PagesController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +16,17 @@ use App\Http\Controllers\HomeController;
 */
 
 
-Route::get('/home', [PagesController::class, 'home']);
-Route::get('/', [PagesController::class, 'redirect']);
-Route::get('/faq', [PagesController::class, 'faq']);
-Route::get('/login', [PagesController::class, 'login']);
-Route::get('/checkout', [PagesController::class, 'checkout']);
-Route::get('/{slug}/reviews', [PagesController::class, 'reviews']);
+Route::get('/home', [CarController::class, 'home']);
 
+Route::get('/', [CarController::class, 'redirect']);
 
+Route::get('/faq', [CarController::class, 'faq']);
+
+Route::get('/checkout/{slug}', [CarController::class, 'checkout'])->middleware('auth');
+
+Route::get('/car/{slug}', [CarController::class, 'reviews']);
+Route::post('/car/{slug}/review', [CarController::class, 'createReview'])->middleware('auth')->name('review.create');
+
+// Authentication Routes
 Auth::routes();
 
-// Route::get('/home', [HomeController::class, 'index'])->name('home');

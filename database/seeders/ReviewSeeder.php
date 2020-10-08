@@ -19,32 +19,37 @@ class ReviewSeeder extends Seeder
         DB::table('reviews')->insert([
             'user_id' => '1',
             'car_id' => '1',
-            'review' => 'TestReview'
+            'review' => 'I love this car it is so fast !!!'
+        ]);
+        DB::table('reviews')->insert([
+            'user_id' => '2',
+            'car_id' => '1',
+            'review' => 'A very nice car'
         ]);
         DB::table('reviews')->insert([
             'user_id' => '2',
             'car_id' => '2',
-            'review' => 'TestReview'
+            'review' => 'This is the best car!!!'
         ]);
         DB::table('reviews')->insert([
             'user_id' => '2',
             'car_id' => '3',
-            'review' => 'TestReview'
+            'review' => 'Buy this car it is great!!'
         ]);
         DB::table('reviews')->insert([
             'user_id' => '1',
             'car_id' => '4',
-            'review' => 'TestReview'
+            'review' => 'My car never arrived where is my refund?'
         ]);
         DB::table('reviews')->insert([
             'user_id' => '2',
             'car_id' => '5',
-            'review' => 'TestReview'
+            'review' => 'Can I pay in BTC?'
         ]);
         DB::table('reviews')->insert([
             'user_id' => '1',
             'car_id' => '6',
-            'review' => 'TestReview'
+            'review' => 'Do not buy this car :( '
         ]);
     }
 }

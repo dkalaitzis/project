@@ -41,10 +41,10 @@
             
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="/{{$car->slug}}/reviews"><img class="card-img-top" src="{{ asset($car->cover_img) }}" alt="Mclaren"></a>
+                <a href="/car/{{$car->slug}}"><img class="card-img-top" src="{{ asset($car->cover_img) }}" alt="Mclaren"></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="/{{$car->slug}}/reviews">{{ $car->name }}</a>
+                    <a href="/car/{{$car->slug}}">{{ $car->name }}</a>
                   </h4>
                   <h5>${{ number_format($car->car_price) }}</h5>
                   <p class="card-text"> {{ $car->car_description }}</p>

@@ -2,10 +2,10 @@
 @if(Request::path() === 'home')
 	<footer class="py-4 bg-dark">
 
-@elseif(basename(request()->path()) === 'reviews')
+@elseif(request()->segment(1) === 'car')
 	<footer class="py-4 bg-dark" style="position: static; width: 100%; bottom: 0;">
 
-@else
+@elseif(request()->segment(1) === 'checkout')
 	<footer class="py-4 bg-dark" style="position: absolute; width: 100%; bottom: 0;">	
 
 @endif
