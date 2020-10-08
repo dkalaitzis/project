@@ -36,26 +36,25 @@
           </div>
 
 
-        <div class="row">
-          @foreach ($cars as $car)
-            
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="/car/{{$car->slug}}"><img class="card-img-top" src="{{ asset($car->cover_img) }}" alt="Mclaren"></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="/car/{{$car->slug}}">{{ $car->name }}</a>
-                  </h4>
-                  <h5>${{ number_format($car->car_price) }}</h5>
-                  <p class="card-text"> {{ $car->car_description }}</p>
+          <div class="row">
+            @foreach ($cars as $car)   
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                  <a href="/car/{{$car->slug}}"><img class="card-img-top" src="{{ asset($car->cover_img) }}" alt="Mclaren"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="/car/{{$car->slug}}" style="color:black">{{ $car->car_name }}</a>
+                    </h4>
+                    <h5>${{ number_format($car->car_price) }}</h5>
+                    <p class="card-text"> {{ $car->car_description }}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          @endforeach
+            @endforeach
+          </div>
         </div>
       </div>
     </div>
-  </div>
     
     @include('inc.backtop')
     </br>

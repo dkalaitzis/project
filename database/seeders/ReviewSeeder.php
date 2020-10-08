@@ -17,12 +17,12 @@ class ReviewSeeder extends Seeder
     public function run()
     {
         DB::table('reviews')->insert([
-            'user_id' => '1',
+            'user_id' => '2',
             'car_id' => '1',
             'review' => 'I love this car it is so fast !!!'
         ]);
         DB::table('reviews')->insert([
-            'user_id' => '2',
+            'user_id' => '3',
             'car_id' => '1',
             'review' => 'A very nice car'
         ]);
@@ -37,7 +37,7 @@ class ReviewSeeder extends Seeder
             'review' => 'Buy this car it is great!!'
         ]);
         DB::table('reviews')->insert([
-            'user_id' => '1',
+            'user_id' => '3',
             'car_id' => '4',
             'review' => 'My car never arrived where is my refund?'
         ]);
@@ -47,7 +47,7 @@ class ReviewSeeder extends Seeder
             'review' => 'Can I pay in BTC?'
         ]);
         DB::table('reviews')->insert([
-            'user_id' => '1',
+            'user_id' => '3',
             'car_id' => '6',
             'review' => 'Do not buy this car :( '
         ]);

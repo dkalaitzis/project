@@ -22,9 +22,14 @@ class UserSeeder extends Seeder
             'password' => Hash::make('admin'),
         ]);
         DB::table('users')->insert([
+            'name' => 'John Snow',
+            'email' => 'JSnow@mail.com',
+            'password' => Hash::make('password'),
+        ]);
+        DB::table('users')->insert([
             'name' => 'Donald Trump',
             'email' => 'DTrump@mail.com',
-            'password' => Hash::make('whitehouse'),
+            'password' => Hash::make('password'),
         ]);
     }
 }
